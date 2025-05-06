@@ -5,22 +5,22 @@ using UnityEngine.UI;
 public class ClickerManager : MonoBehaviour
 {
     //Value Per Click
-    [SerializeField] int clickValue = 1;
+    public int clickValue = 1;
     //Score - used for Upgrade purchases
     public float score = 0;
     //total clicks
     public float tClicks = 0;
     //UI Display for Score
     public float tPoints = 0;
+    //increase over Time
+    public int valueOverTime = 0;
+    //timer 
+    public float timer = 0;
+
     [SerializeField] Text _scoreDisplay;
     [SerializeField] Text _totalClickDisplay;
     [SerializeField] Text _totalPointsDisplay;
-    //increase over Time
-    [SerializeField] int valueOverTime = 0;
-    //timer 
-    [SerializeField] float timer = 0;
-
-    private void Update() //This function is used later for the Upgrade system.
+    public void Update() //This function is used later for the Upgrade system.
     {
         if (valueOverTime > 0)
         {
@@ -78,4 +78,7 @@ public class ClickerManager : MonoBehaviour
         //This closes the Function
         UpdateUI();
     }
+
+
+
 }
