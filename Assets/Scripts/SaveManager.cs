@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour 
 {
-    public string filePath = Application.dataPath + "/ClickerSave.json";
+    public string filePath;
     public SaveData data = new SaveData();
     // even though these are public in their own scripts, our references to them here need to be public because this script doesn't know what they are otherwise. Serialise wouldn't work as that is for the Unity editor. 
     public ClickerManager manager;
@@ -31,6 +33,10 @@ public class SaveManager : MonoBehaviour
         data.timer = manager.timer;
 
     }
+     void Awake()
+    {
+        filePath = Path.Combine(Application.dataPath, "ClickerSave.Json");
+    }
     void WriteJSONFile(SaveData data)
         // This writes the values into the files
     {
@@ -42,6 +48,15 @@ public class SaveManager : MonoBehaviour
     {
         SendDataToSaveDataToSave();
         WriteJSONFile(data);
+    }
+    public void SaveAndExit()
+    {
+        SendDataToSaveDataToSave();
+        WriteJSONFile(data);
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
     }
     #endregion
     #region Load
