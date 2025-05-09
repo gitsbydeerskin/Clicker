@@ -1,20 +1,24 @@
 using UnityEngine;
-using System;
+
 using UnityEngine.UI;
 
+
 public class ClickerUpgrade : MonoBehaviour
-   
+
 {
     [System.Serializable]
     public struct ClickerUpgradeOptions
     {
-       public string name;
-       public string description;
-       public int value;
-       public int price;
-       public bool isAuto;
-       public Text UI;
-       public Button button;
+        public string name;
+        public string description;
+        public int value;
+        public int price;
+        public bool isAuto;
+        public bool expiresAfterTime;
+        public Text UI;
+        public Button button;
+        public float expireTimer;
+        public bool effectActive;
     }
     public ClickerUpgradeOptions[] options;
     //the following connects ClickerUpgrade to ClickerManager
@@ -25,6 +29,8 @@ public class ClickerUpgrade : MonoBehaviour
     {
         for (int i = 0; i < options.Length; i++)
         {
+            options[i].effectActive = false;
+            options[i].expireTimer = 0f;
             UpdateUI(i);
         }
     }
@@ -32,20 +38,21 @@ public class ClickerUpgrade : MonoBehaviour
     {
         // manager.score is referencing the public float score = 0; from ClickerManager. 
         if (manager.score >= options[index].price)
-            //We are checking if the ClickerManager score is greater or equal to the Upgrade's price by using >=
-            //The upgrades are stored in the options[index].price array, from the ClickerUpgradeOptions struct.
+        //We are checking if the ClickerManager score is greater or equal to the Upgrade's price by using >=
+        //The upgrades are stored in the options[index].price array, from the ClickerUpgradeOptions struct.
         {
             manager.SetPrice(options[index].isAuto, options[index].value, options[index].price);
             //++ increments the "operand" by 1. 
             options[index].value++;
             options[index].price += 2;
+            options[index].effectActive = true; 
+            options[index].expireTimer = 0f; // Resets the timer
             UpdateUI(index);
-
         }
     }
     void UpdateUI(int index)
-    { 
-        options[index].UI.text = $"{options[index].name} : {options[index].description}\nPrice: {options[index].price:C} : Value: {options[index].value}";        
+    {
+        options[index].UI.text = $"{options[index].name} : {options[index].description}\nPrice: {options[index].price:C} : Value: {options[index].value}";
     }
     void isInteractable(int index)
     {
@@ -57,7 +64,7 @@ public class ClickerUpgrade : MonoBehaviour
             options[index].button.interactable = true;
         }
 
-        else if(manager.score < options[index].price && options[index].button.interactable == true)
+        else if (manager.score < options[index].price && options[index].button.interactable == true)
         {
             options[index].button.interactable = false;
         }
@@ -67,10 +74,21 @@ public class ClickerUpgrade : MonoBehaviour
     {
         for (int i = 0; i < options.Length; i++)
         {
+            if (options[i].expiresAfterTime && options[i].effectActive)
+            {
+                options[i].expireTimer += Time.deltaTime;
+
+                if (options[i].expireTimer >= 60f)
+                {
+                    options[i].effectActive = false;
+                    options[i].expireTimer = 0f;
+                    UpdateUI(i);
+                }
+            }
             isInteractable(i);
         }
+        
     }
-  
 }
 
 
