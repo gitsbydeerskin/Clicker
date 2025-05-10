@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 58067669}
   - component: {fileID: 58067668}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: LoadButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,8 +230,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631, y: -302.08}
-  m_SizeDelta: {x: 395.043, y: 156.17}
+  m_AnchoredPosition: {x: -709.6272, y: -322.29843}
+  m_SizeDelta: {x: 237.7886, y: 115.7331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58067668
 MonoBehaviour:
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 58595769}
   - component: {fileID: 58595770}
   m_Layer: 5
-  m_Name: ClickButton
+  m_Name: ClickManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,6 +483,7 @@ MonoBehaviour:
   _scoreDisplay: {fileID: 1196098549}
   _totalClickDisplay: {fileID: 2141829725}
   _totalPointsDisplay: {fileID: 612340033}
+  _ppsDisplay: {fileID: 90717434}
 --- !u!95 &58595770
 Animator:
   serializedVersion: 7
@@ -580,6 +581,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64282520}
   m_CullTransparentMesh: 1
+--- !u!1 &90717433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90717436}
+  - component: {fileID: 90717435}
+  - component: {fileID: 90717434}
+  m_Layer: 5
+  m_Name: ppsDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &90717434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90717433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4236285, g: 0.042452812, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a6dad9d49428e32468a2d756c2456c7c, type: 3}
+    m_FontSize: 34
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &90717435
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90717433}
+  m_CullTransparentMesh: 1
+--- !u!224 &90717436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90717433}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1283777945}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 303.07}
+  m_SizeDelta: {x: 398.0164, y: 42.141}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &115565332
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,10 +929,10 @@ RectTransform:
   - {fileID: 1258657942}
   m_Father: {fileID: 1339616447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 542.67773, y: -90.664764}
+  m_SizeDelta: {x: 1065.3555, y: 143.32953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272374316
 MonoBehaviour:
@@ -1375,7 +1455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552786534}
   m_Layer: 5
-  m_Name: ShopDisplay
+  m_Name: ShopEnter(Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1540,7 +1620,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a6dad9d49428e32468a2d756c2456c7c, type: 3}
-    m_FontSize: 46
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1595,10 +1675,10 @@ RectTransform:
   - {fileID: 2082184739}
   m_Father: {fileID: 1339616447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 542.67773, y: -378.1238}
+  m_SizeDelta: {x: 1065.3555, y: 143.32953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623892920
 MonoBehaviour:
@@ -1728,7 +1808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000005722, y: -0.000025511}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -0.00002670288}
   m_SizeDelta: {x: -18.438, y: -7.7624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700860662
@@ -1988,7 +2068,7 @@ GameObject:
   - component: {fileID: 879009394}
   - component: {fileID: 879009393}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Save&QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,17 +2081,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879009391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 700860661}
-  m_Father: {fileID: 1283777945}
+  m_Father: {fileID: 1190840728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754, y: 404}
+  m_AnchoredPosition: {x: -753.99994, y: 755.006}
   m_SizeDelta: {x: 191.0435, y: 80.429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879009393
@@ -2060,23 +2140,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2124476090}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
-        m_MethodName: ActuallySave
+        m_MethodName: SaveAndExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2198,6 +2266,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908825841}
+  m_CullTransparentMesh: 1
+--- !u!1 &953168112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953168113}
+  - component: {fileID: 953168115}
+  - component: {fileID: 953168114}
+  m_Layer: 5
+  m_Name: blockingPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &953168113
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953168112}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193964981}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.7857018, y: -39.065308}
+  m_SizeDelta: {x: 1821.2316, y: 981.1599}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &953168114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953168112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &953168115
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953168112}
   m_CullTransparentMesh: 1
 --- !u!1 &994048206
 GameObject:
@@ -2381,6 +2524,7 @@ RectTransform:
   - {fileID: 723590513}
   - {fileID: 994048207}
   - {fileID: 2001961219}
+  - {fileID: 879009392}
   m_Father: {fileID: 1581733291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2443,12 +2587,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1193964981}
   m_Layer: 5
-  m_Name: Shop
+  m_Name: UpgradeStorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1193964981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2461,6 +2605,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 953168113}
   - {fileID: 1317374447}
   m_Father: {fileID: 1283777945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2813,15 +2958,15 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 58595765}
-  - {fileID: 552786534}
+  - {fileID: 90717436}
+  - {fileID: 58067667}
   - {fileID: 289326180}
   - {fileID: 1169623663}
   - {fileID: 363757265}
   - {fileID: 1115700838}
+  - {fileID: 552786534}
   - {fileID: 1193964981}
   - {fileID: 2124476089}
-  - {fileID: 58067667}
-  - {fileID: 879009392}
   m_Father: {fileID: 1977680273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2918,7 +3063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6415094, b: 0.60878164, a: 0.9137255}
+  m_Color: {r: 0, g: 0.6415094, b: 0.60878164, a: 0.6117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2952,7 +3097,7 @@ GameObject:
   - component: {fileID: 1339616448}
   - component: {fileID: 1339616449}
   m_Layer: 5
-  m_Name: Upgrades
+  m_Name: UpgradesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3034,14 +3179,15 @@ MonoBehaviour:
     UI: {fileID: 1984249806}
     button: {fileID: 1705624430}
   - name: Super Mouse
-    description: Multiplies all upgrades by 2 for 60 seconds!!!!
+    description: Multiplyers all upgrades!!! That's insane!!!
     value: 2
-    price: 100
+    price: 1000
     isAuto: 0
     UI: {fileID: 1584274843}
     button: {fileID: 623892920}
   manager: {fileID: 58595769}
-  shopPanel: {fileID: 0}
+  shopPanel: {fileID: 1193964980}
+  blockingPanel: {fileID: 953168112}
 --- !u!1 &1416900943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,10 +3512,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1193964980}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1339616449}
+        m_TargetAssemblyTypeName: ClickerUpgrade, Assembly-CSharp
+        m_MethodName: ToggleUpgradeStore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3451,7 +3597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -182.76}
+  m_AnchoredPosition: {x: -0.000061035156, y: -182.76001}
   m_SizeDelta: {x: -444.357, y: -365.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581733292
@@ -3681,10 +3827,10 @@ RectTransform:
   - {fileID: 1416900944}
   m_Father: {fileID: 1339616447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 542.67773, y: -234.39429}
+  m_SizeDelta: {x: 1065.3555, y: 143.32953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705624430
 MonoBehaviour:
@@ -4354,10 +4500,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1193964980}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1339616449}
+        m_TargetAssemblyTypeName: ClickerUpgrade, Assembly-CSharp
+        m_MethodName: ToggleUpgradeStore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4527,7 +4673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa5137d5aff46449b2149dfdb5328a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: C:/Users/m227714/Documents/GitHub/Clicker/Assets/ClickerSave.json
   data:
     score: 0
     clickValue: 0
